@@ -1,0 +1,36 @@
+{
+  "publication_version": "v2.0",
+  "omitted": [
+    {
+      "path": "finalni_studie/.DS_Store",
+      "reason": "system metadata",
+      "sha256": "dcb916bc22bba643fb9e6c6256bf4e7c6c742fa5f789cea23e63746d7d4b220e"
+    },
+    {
+      "path": "finalni_studie/inputs/41561_2019_400_MOESM1_ESM.pdf",
+      "reason": "article linked at publisher; not redistributed",
+      "sha256": "2c24e0e86bf0962abf2026060e3b016b7dd0851eda460031ecaa5166530c24a6"
+    },
+    {
+      "path": "finalni_studie/inputs/pages2k2019_article.pdf",
+      "reason": "article linked at publisher; not redistributed",
+      "sha256": "e136fc310eda3340eaf5b4fab537f3b2eb094855186f1608a942b763bc57e037"
+    }
+  ],
+  "metadata_changes": [
+    {
+      "path": "finalni_studie/README_reprodukce.md",
+      "reason": "local computer path replaced by portable path; no scientific values changed",
+      "original_sha256": "6788dac5c57fb24b4a8b9d0f5bb35863aac568c3e97ec722ff5ec4b1eb1f63f8",
+      "public_sha256": "ce5336b21aa705a93a785abe0c3161d39ca1988ffe3f976c75f76b94b2ef112e"
+    },
+    {
+      "path": "finalni_studie/inputs/previous_outputs_validation.json",
+      "reason": "local computer path replaced by portable path; no scientific values changed",
+      "original_sha256": "957d33a91b300e3781caa94efd00b35378f0d39c6d4901b25bd4b399378f450c",
+      "public_sha256": "754b1bc6ccdbd23a4ab4095d2e0fdff8a23cf2b2284e53cde749b57da13d5620"
+    }
+  ],
+  "scientific_data_modified": false,
+  "html_and_figures_modified": false
+}
