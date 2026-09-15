@@ -1,0 +1,37 @@
+name: Publish PAGES2k study
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/deploy.yml']
+  release:
+    types: [published]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Download and verify scientific release
+        run: |
+          curl --fail --location --retry 3 --output study.zip https://github.com/nabiknab-eng/pages2k-2019-audit/releases/download/v2.0/pages2k-audit-site.zip
+          printf '%s  study.zip\n' 'db1f4a61685207f1641d1dd0f6b6bcf0060ca5e9b71627ff1217496959eb3352' | sha256sum --check
+          mkdir _site
+          unzip -q study.zip -d _site
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+      - name: Deploy public study
+        id: deployment
+        uses: actions/deploy-pages@v4
