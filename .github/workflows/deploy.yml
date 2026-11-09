@@ -2,7 +2,7 @@ name: Publish PAGES2k study
 on:
   push:
     branches: [main]
-    paths: ['.github/workflows/deploy.yml']
+    paths: ['.github/workflows/deploy.yml', 'publish_editorial.py']
   release:
     types: [published]
   workflow_dispatch:
@@ -20,6 +20,8 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Check out publication scripts
+        uses: actions/checkout@v4
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Download and verify scientific release
@@ -28,6 +30,8 @@ jobs:
           printf '%s  study.zip\n' 'db1f4a61685207f1641d1dd0f6b6bcf0060ca5e9b71627ff1217496959eb3352' | sha256sum --check
           mkdir _site
           unzip -q study.zip -d _site
+      - name: Apply website editorial update
+        run: python3 publish_editorial.py _site
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
