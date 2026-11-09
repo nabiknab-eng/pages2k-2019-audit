@@ -22,6 +22,8 @@ Původně zadaný článek **Neukom et al. (2019), No evidence for globally cohe
 
 Release **v2.0** obsahuje `pages2k-audit-site.zip`: rozbalením vznikne samostatně čitelný web a datové adresáře. HTML má obrázky vložené a funguje i offline. Relativní odkazy na CSV, JSON, NPZ, grafy a skripty jsou zachovány. Větší data jsou v release, aby nezatěžovala historii Git.
 
+Webová verze má navíc stručný úvod a vysvětlení výběru záznamů. Tyto úpravy se aplikují při publikaci. Archiv v2.0, jeho kontrolní součty a výpočty zůstávají v původní podobě.
+
 - `finalni_studie_v2/` — hlavní rozšířená studie, datový slovník, nové výsledky a skripty.
 - `finalni_studie/` — předchozí audit, numerické vstupy, výstupy a reprodukční archivy.
 - `letokruhy_audit_vek_a_selekce/phase2_observed_age.npz` — pozorované věky pro novou citlivostní analýzu.
